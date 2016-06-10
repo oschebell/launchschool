@@ -7,7 +7,7 @@ require 'yaml'
 MESSAGES = YAML.load_file('calculator_messages.yml')
 LANGUAGE = 'en'
 
-def messages(message, lang='en')
+def messages(message, lang = 'en')
   MESSAGES[lang][message]
 end
 
@@ -20,16 +20,16 @@ def valid_number?(num)
 end
 
 def operation_to_message(operation)
-  word = case operation
-         when '1'
-           'Adding'
-         when '2'
-              'Subtracting'
-         when '3'
-              'Multiplying'
-         when '4'
-              'Dividing'
-       end
+  case operation
+  when '1'
+    'Adding'
+  when '2'
+    'Subtracting'
+  when '3'
+    'Multiplying'
+  when '4'
+    'Dividing'
+  end
 end
 
 prompt(messages('welcome'))
