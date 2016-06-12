@@ -1,4 +1,4 @@
-VALID_CHOICES = %w(rock paper scissors)
+VALID_CHOICES = %w(rock paper scissors lizard spock)
 
 def prompt(message)
   puts "=> #{message}"
@@ -22,7 +22,12 @@ loop do
 
   if choice == 'rock' && computer_choice == 'scissors' ||
      choice == 'paper' && computer_choice == 'rock' ||
-     choice == 'scissors' && computer_choice == 'paper'
+     choice == 'scissors' && computer_choice == 'paper' ||
+     choice == 'lizard' && computer_choice == 'spock' ||
+     choice == 'lizard' && computer_choice == 'paper' ||
+     choice == 'spock' && computer_choice == 'scissors' ||
+     choice == 'spock' && computer_choice == 'rock'
+
     prompt("You won!")
   elsif choice == computer_choice
     prompt("Draw!")
