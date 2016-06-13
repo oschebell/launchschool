@@ -31,13 +31,13 @@ def initialize_board
 end
 
 def empty_squares(brd)
-  brd.keys.select {|num| brd[num] == INITIAL_MARKER}
+  brd.keys.select { |num| brd[num] == INITIAL_MARKER }
 end
 
 def player_places_piece!(brd)
   square = ''
   loop do
-    prompt"Choose a square: (#{empty_squares(brd).join(",")})"
+    prompt"Choose a square: (#{empty_squares(brd).join(',')})"
     square = gets.chomp.to_i
     if empty_squares(brd).include?(square)
       break
@@ -45,9 +45,7 @@ def player_places_piece!(brd)
       prompt("Sorry, that's not a valid choice.")
     end
   end
-  binding.pry
   brd[square] = PLAYER_MARKER
-  binding.pry
 end
 
 board = initialize_board
