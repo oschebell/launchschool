@@ -10,7 +10,7 @@ end
 
 def display_board(brd)
   system 'clear'
-  puts "Your marker is an #{PLAYER_MARKER}, computer's marker is an #{COMPUTER_MARKER}"
+  puts "Your marker is an #{PLAYER_MARKER}, computer's marker is a #{COMPUTER_MARKER}"
   puts ""
   puts "     |     |     "
   puts "  #{brd[1]}  |  #{brd[2]}  |  #{brd[3]} "
@@ -65,27 +65,26 @@ end
 
 def detect_winner(brd)
   winning_lines = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] + # rows
-                 [[1, 4, 7], [2, 5, 8], [3, 6, 9]] + # columns
-                 [[1, 5, 9], [3, 5, 7]]              # diagonals
+                  [[1, 4, 7], [2, 5, 8], [3, 6, 9]] + # columns
+                  [[1, 5, 9], [3, 5, 7]]              # diagonals
 
   winning_lines.each do |index|
     if brd[index[0]] == PLAYER_MARKER &&
        brd[index[1]] == PLAYER_MARKER &&
        brd[index[2]] == PLAYER_MARKER
-       return 'Player'
-    elsif
-       brd[index[0]] == COMPUTER_MARKER &&
-       brd[index[1]] == COMPUTER_MARKER &&
-       brd[index[2]] == COMPUTER_MARKER
+      return 'Player'
+    elsif brd[index[0]] == COMPUTER_MARKER &&
+          brd[index[1]] == COMPUTER_MARKER &&
+          brd[index[2]] == COMPUTER_MARKER
       return 'Computer'
     end
   end
-    nil
+  nil
 end
 
-#The game turns
+# The game turns
 
-loop do #play again? loop
+loop do # play again? loop
   board = initialize_board
   display_board(board)
 
@@ -95,7 +94,6 @@ loop do #play again? loop
     break if someone_won?(board) || board_full?(board)
     computer_places_piece!(board)
     display_board(board)
-    #binding.pry
     break if someone_won?(board) || board_full?(board)
   end
 
