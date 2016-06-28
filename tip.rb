@@ -13,9 +13,9 @@ puts "What is the tip percentage?"
 
 tip = gets.chomp.to_f
 
-total_tip = (bill * tip)/100
+total_tip = ((bill * tip)/100).round(2)
 
-total_bill = ( bill + total_tip )
+total_bill = ( bill + total_tip ).round(2)
 
 puts "The tip is $#{total_tip}"
 

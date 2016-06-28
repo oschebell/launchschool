@@ -45,3 +45,57 @@ Easy 3
 4. advice.slice!(0, advice.index('house'))
 5. statement.count('t')
 6. title.center(40)
+
+
+Medium 1
+1. 10.times { |number| puts (" " * number) + "The Flintstones Rock!"}
+2.  statement = "The Flintstones Rock"
+
+    letters = statement.split("")
+
+    counts = Hash.new 0
+
+    letters.each do |occurrence|
+      counts[occurrence] += 1
+    end
+
+    puts counts
+
+3. puts "the value of 40 + 2 is " + (40 + 2)
+
+    solution 1: puts "the value of 40 + 2 is " + (40 + 2).to_s
+
+    solution 2: puts "the value of 40 + 2 is #{(40 + 2)}"
+
+
+4.  def factors(number)
+      dividend = number
+      divisors = []
+      while dividend > 0 do
+        divisors << number / dividend if number % dividend == 0
+        dividend -= 1
+      end
+      divisors
+    end
+
+
+7.
+
+    def fib(first_num, second_num, limit)
+      while second_num < limit
+        sum = first_num + second_num
+        first_num = second_num
+        second_num = sum
+      end
+      sum
+    end
+
+    result = fib(0, 1, 20)
+    puts "result is #{result}"
+
+8.
+string = "hello world"
+string.upcase
+
+
+9. 
